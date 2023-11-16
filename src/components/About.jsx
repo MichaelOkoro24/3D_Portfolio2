@@ -4,13 +4,15 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { services } from '../constants';
 import { fadeIn, textVariant } from "../utils/motion";
+import { SectionWrapper } from '../hoc';
 
+// Creates a service card using framer motion
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
       variants={fadeIn("right", "spring", 0.5*index, 0.75)}
-      className="w-full green-pink-gradient p-[1px] roundded-[20px] shadow-card"
+      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
       >
         <div
         options={{
@@ -32,7 +34,7 @@ const ServiceCard = ({ index, title, icon }) => {
    )
 }
 
-
+// Creates the About component user framer motion
 const About = () => {
   return (
     <>
@@ -57,9 +59,8 @@ const About = () => {
       ))}
      </div>
     </>
+  );
+};
 
-    
-  )
-}
-
-export default About;
+// Wraps the About component with the SectionWrapper HOC
+export default SectionWrapper(About, "about");
