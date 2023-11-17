@@ -9,12 +9,11 @@ const SectionWrapper = (Component, idName) =>
  function HOC() {
   return (
     <motion.section
-        // Will help animate cards
         variants={staggerContainer}
         initial="hidden"
         animate="show"
         viewport={{ once: true, amount: 0.25 }}
-        // Adds padding to cards so its away from the edge of the screen
+        // Adds padding to so divs are away from the edge of the screen
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
     >
         <span className="hash-span" id={idName}>

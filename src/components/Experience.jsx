@@ -12,13 +12,13 @@ import { textVariant } from '../utils/motion'
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
     contentStyle={{ background: '#1d1836', color: '#fff'}}
-    contentArrowStyle={{ borderRight: '7px solid #1d1836'}}
+    contentArrowStyle={{ borderRight: '7px solid #232631'}}
     date={experience.date}
     iconStyle={{background: experience.iconBg}}
       //  Creates icon for each experience
     icon={
       // centers icon
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-3">
         <img 
           src={experience.icon}
           alt={experience.company}
@@ -30,7 +30,9 @@ const ExperienceCard = ({ experience }) => (
     <div>
       <h3 className="text-white text=[20px] font-bold"></h3>
       <p className="text-secondary text-[16px] font-semibold">{experience.company_name}</p>
+      {/* Creates a list of points for each experience */}
       <ul className="mt-5 list-disc ml-5 space-y-2">
+        {/* // Maps through each point in the experience */}
         {experience.points.map((point, index) => (
           <li
           key={`experience-point-${index}`}
@@ -52,6 +54,7 @@ const ExperienceCard = ({ experience }) => (
 const Experience = () => {
   return (
   <>
+  {/* This motion div animates the p-[tag] and the h2-tag */}
    <motion.div
    variants={textVariant()}>
      <p className={styles.sectionSubText}>What I Have Done So Far</p>
@@ -59,6 +62,7 @@ const Experience = () => {
 
    </motion.div>
 
+  {/* This creates the vertical timeline which is a component from react-vertical-timeline-component */}
    <div className="mt-20 flex flex-col">
     <VerticalTimeline>
       {experiences.map((experience, index) => (
