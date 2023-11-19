@@ -7,7 +7,7 @@ import { github } from '../assets'
 import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
-import { MixOperation } from 'three';
+
 
 // This declares the variable ProjectCard for our Works section and adds Parameters from projects
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
@@ -46,9 +46,22 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
               </div>
           </div>
         </div>
-      </Tilt>
+        <div>
+          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+        </div>
+        <div
+        // Adds tags for 
+        className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+              #{tag.name}
+            </p>
 
-    test
+          ))}
+
+        </div>
+      </Tilt>
     </motion.div>
   )
 
