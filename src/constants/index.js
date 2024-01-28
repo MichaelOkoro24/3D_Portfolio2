@@ -23,6 +23,8 @@ import {
     jobit,
     tripguide,
     threejs,
+    
+    
   } from "../assets";
   
   export const navLinks = [
@@ -117,7 +119,7 @@ import {
   const experiences = [
     {
       title: "React.js Developer",
-      company_name: "Starbucks",
+      company_name: "Baxter",
       icon: starbucks,
       iconBg: "#383E56",
       date: "March 2020 - April 2021",
